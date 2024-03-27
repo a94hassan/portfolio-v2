@@ -1,0 +1,10 @@
+@import './../../../styles.scss';
+
+:host {
+  border: 2px dashed turquoise;
+  @include flexBox();
+  >img {
+    width: 1440;
+    margin-top: -540px;
+  }
+}

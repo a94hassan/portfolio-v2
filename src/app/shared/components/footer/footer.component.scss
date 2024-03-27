@@ -1,0 +1,46 @@
+@import '../../../../styles.scss';
+
+:host {
+  border: 2px dotted white;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: $bgColor;
+  border-top: 4px solid $secondColor;
+  @include flexBox();
+}
+
+footer {
+  border: 2px dashed green;
+  @include contentWidth();
+  @include flexBox($jc: space-between);
+  padding: 100px $paddingLR;
+  >div:first-of-type {
+    @include flexBox($ai:unset, $fd: column, $gap: 8px);
+    >img:hover {
+      cursor: pointer;
+    }
+    >span {
+      width: max-content;
+      &:hover {
+        cursor: pointer;
+        text-decoration: underline 2px $secondColor;
+        text-underline-offset: 8px;
+      }
+    }
+  }
+  >span {
+    font-size: 24px;
+  }
+  >div:last-child {
+    @include flexBox($gap: 40px);
+    >img {
+      width: 30px;
+      &:hover {
+        cursor: pointer;
+        scale: 1.4;
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+@import './../../../../styles.scss';
+
+:host {
+  border: 2px dotted white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: $bgColor;
+  @include flexBox();
+}
+
+header {
+  border: 2px dashed yellow;
+  @include contentWidth();
+  @include flexBox($jc: space-between);
+  padding: 40px $paddingLR;
+  >img {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

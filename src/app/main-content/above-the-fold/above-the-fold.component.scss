@@ -1,0 +1,84 @@
+@import './../../../styles.scss';
+
+:host {
+  border: 2px dashed blue;
+  height: 100vh;
+  width: 100%;
+  @include flexBox($fd: column);
+}
+
+section {
+  border: 2px dashed red;
+  @include contentWidth();
+  @include flexBox();
+  padding: 0 $paddingLR;
+  >img {
+    margin-top: 64px;
+  }
+  >div:first-of-type {
+    border: 2px dashed green;
+    width: 100%;
+    @include flexBox($fd: column, $gap: 32px);
+    >div {
+      @include flexBox();
+      >span {
+        margin-bottom: 10px;
+        font-size: 68px;
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+      }
+      >div {
+        >h1 {
+          margin: -24px 0;
+          font-size: 90px;
+        }
+        >h2 {
+          font-size: 58px;
+          font-weight: 400;
+          color: $firstColor;
+        }
+      }
+    }
+    >button {
+      position: relative;
+      z-index: 1;
+      @include button();
+    }
+  }
+}
+
+.info {
+  border: 2px dashed violet;  
+  @include contentWidth();
+  padding-right: 100px;
+  position: absolute;
+  bottom: 0;
+  @include flexBox($jc: space-between, $ai: flex-end);
+  >div:first-of-type {
+    @include flexBox($gap: 40px);
+    >div{
+      height: 4px;
+      width: 100px;
+      background-color: $firstColor;
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+    }
+    >img {
+      width: 30px;
+      &:hover {
+        cursor: pointer;
+        scale: 1.4;
+      }
+    }
+    >span {
+      font-size: 24px;
+    }
+  }
+  >div:last-of-type {
+    @include flexBox($fd: column, $gap: 12px);
+    >span {
+      font-size: 24px;
+      writing-mode: vertical-lr;
+    }
+  }
+}
