@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { SkillsService } from '../../shared/services/skills.service';
 
 @Component({
   selector: 'app-my-skills',
@@ -8,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './my-skills.component.scss'
 })
 export class MySkillsComponent {
-
+  skillsService = inject(SkillsService);
 }

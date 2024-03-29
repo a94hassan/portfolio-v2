@@ -1,1 +1,17 @@
-<p>project works!</p>
+@for (project of projectsService.projects; track $index) {
+  <div [ngClass]="{'alternate-style': $index % 2 !== 0}">
+    <img src="./../../../../assets/img/4_portfolio_section/{{project.img}}" alt="{{project.name}} image">
+    <div>
+      <div>
+        <h4>{{project.name}}</h4>
+        <span>{{project.techStack}}</span>
+        <p>{{project.description}}</p>
+      </div>
+      <div>
+        <button>Live test</button>
+        <button>Github</button>
+      </div>
+    </div>
+  </div>
+}
+

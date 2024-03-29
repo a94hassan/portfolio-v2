@@ -4,11 +4,14 @@
   border: 2px dashed blue;
   height: 100vh;
   width: 100%;
-  @include flexBox($fd: column);
+  @include flexBox();
 }
 
 section {
   border: 2px dashed red;
+  background-image: url(./../../../assets/img/1_above_the_fold_section/shadow_atf.png);
+  background-repeat: no-repeat;
+  background-position: bottom -180px left -80px;
   @include contentWidth();
   @include flexBox();
   padding: 0 $paddingLR;
@@ -52,6 +55,7 @@ section {
   @include contentWidth();
   padding-right: 100px;
   position: absolute;
+  z-index: 2;
   bottom: 0;
   @include flexBox($jc: space-between, $ai: flex-end);
   >div:first-of-type {
@@ -79,6 +83,7 @@ section {
     >span {
       font-size: 24px;
       writing-mode: vertical-lr;
+      line-height: 0.8;
     }
   }
 }

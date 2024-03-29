@@ -1,1 +1,21 @@
-<p>my-skills works!</p>
+<div><img src="./../../../assets/img/3_my_skills_section/shadow_my_skills.png" alt="shadow"></div>
+<section>
+  <div>
+    @for (skill of skillsService.skills; track $index) {
+      <div class="trigger">
+        <img src="./../../../assets/img/3_my_skills_section/{{skill.icon}}" alt="{{skill.name}} icon" class="target">
+        <span>{{skill.name}}</span>
+      </div>
+    }
+  </div>
+  <div>
+    <div>
+      <h1>My skills</h1>
+      <div></div>
+    </div>
+    <p>I have grown my frontend developments skills that have allowed me to create different real projects.</p>
+    <div>
+      <button>Get in touch</button>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,51 @@
+@import './../../../../styles.scss';
+
+:host {
+  width: 100%;
+  padding: 100px $paddingLR;
+  >div {
+    @include flexBox($gap: 120px, $jc: flex-end);
+    margin-bottom: 60px;
+    >img {
+      width: 420px;
+    }
+    >div {
+      width: 520px;
+      >div:first-of-type {
+        >h4 {
+          font-size: 32px;
+          color: $firstColor;
+          margin-bottom: 12px;
+        }
+        >span {
+          font-size: 24px;
+          color: $secondColor;
+        }
+        >p {
+          margin-top: 8px;
+          line-height: 1.25;
+        }
+      }
+      >div:last-of-type {
+        margin-top: 32px;
+        @include flexBox($gap: 80px, $jc: unset);
+        >button:first-of-type {
+          @include button($switchColors: true);
+        }
+        >button:last-of-type {
+          @include button($transparent: true);
+        }
+      }
+    }
+  }
+}
+
+:host .alternate-style {
+  @include flexBox($gap: 120px, $jc: flex-end, $fd: row-reverse);
+  >div {
+    text-align: right;
+    >div:last-of-type {
+      @include flexBox($gap: 80px, $jc: flex-end);
+    }
+  }
+}

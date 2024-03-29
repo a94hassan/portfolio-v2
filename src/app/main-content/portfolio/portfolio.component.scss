@@ -1,0 +1,46 @@
+@import './../../../styles.scss';
+
+:host {
+  border: 2px dashed turquoise;
+  width: 100%;
+  @include flexBox();
+}
+
+section {
+  border: 2px dashed orange;
+  @include contentWidth();
+  @include flexBox($fd: column);
+  >div:first-of-type {
+    border: 2px dashed green;
+    width: 100%;
+    @include flexBox($fd: column);
+    >div {
+      border: 2px dashed purple;
+      width: 100%;
+      @include flexBox();
+      >div:first-of-type {
+        width: 100%;
+        @include flexBox($jc: flex-end);
+        >div {
+          width: 120px;
+          height: 4px;
+          background-color: $firstColor;
+          border-top-left-radius: 2px;
+          border-bottom-left-radius: 2px;
+        }
+      }
+      >h1 {
+        font-size: 90px;
+        padding: 0px 40px;
+      }
+      >div:last-of-type {
+        height: 4px;
+        width: 100%;
+        background-color: $firstColor;
+      }
+    }
+    >span {
+      margin-top: 16px;
+    }
+  }
+}
