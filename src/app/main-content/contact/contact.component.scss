@@ -1,0 +1,150 @@
+@import './../../../styles.scss';
+
+:host {
+  border: 2px dashed blue;
+  width: 100%;
+  @include flexBox();
+}
+
+section {
+  border: 2px dashed red;
+  background-image: url(./../../../assets/img/5_contact_section/shadow.png);
+  background-repeat: no-repeat;
+  background-position: bottom -300px left;
+  @include contentWidth();
+  @include flexBox($fd: column);
+  >div:first-of-type {
+    border: 2px dashed yellow;
+    @include flexBox($jc: flex-start);
+    width: 100%;
+    >div {
+      height: 4px;
+      width: 50px;
+      margin-right: 50px;
+      background-color: $firstColor;
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+    }
+    >h1 {
+      font-size: 90px;
+    }
+  }
+  >div:last-of-type {
+    border: 2px dashed green;
+    width: 100%;
+    margin-top: 64px;
+    margin-bottom: 100px;
+    @include flexBox($ai: unset);
+    padding: 0 $paddingLR;
+    >div:first-of-type {
+      border: 2px dashed orange;
+      width: 50%;
+      padding-right: 160px;
+      >h4 {
+        font-size: 32px;
+      }
+      >p {
+        line-height: 1.25;
+        margin-top: 32px;
+        margin-bottom: 24px;
+      }
+    }
+    >div:last-of-type {
+      border: 2px dashed purple;
+      width: 50%;
+      @include flexBox($fd: column, $gap: 40px);
+      >div {
+        width: 100%;
+        @include flexBox($jc: flex-end);
+        >button {
+          width: 40px;
+          height: 40px;
+          background-image: url(./../../../assets/img/5_contact_section/arrow_up.png);
+          background-position: center;
+          background-repeat: no-repeat;
+          background-color: transparent;
+          border: none;
+          &:hover {
+            background-image: url(./../../../assets/img/5_contact_section/arrow_up_hover.png);
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+form {
+  @include flexBox($fd: column);
+  width: 100%;
+  >div:first-of-type {
+    @include flexBox($fd: column, $gap: 32px);
+    width: 100%;
+    >input, >textarea {
+      width: 100%;
+      background-color: $bgColor;
+      border: 1px solid $firstColor;
+      outline-color: $secondColor;
+      border-radius: 8px;
+      padding: 10px 20px;
+      font-size: 16px;
+      resize: vertical; 
+      &::placeholder {
+        color: white;
+      }
+      &:hover {
+        cursor: pointer;
+        border: 1px solid $secondColor;
+      }
+      &:focus-visible {
+        outline: 1px solid $secondColor;
+        border: 1px solid $secondColor;
+      }
+      &::-webkit-resizer {
+       background-image: url(./../../../assets/img/5_contact_section/resizer.png);
+       background-repeat: no-repeat;
+      }
+    }
+  }
+  >div:last-of-type{
+    @include flexBox($gap: 8px);
+    width: 100%;
+    font-size: 14px;
+    margin-top: 16px;
+    margin-bottom: 32px;
+    input {
+      appearance: none; 
+      -webkit-appearance: none;
+      -moz-appearance: none; 
+      width: 24px;
+      height: 24px; 
+      background-image: url(./../../../assets/img/5_contact_section/checkbox.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      cursor: pointer;
+      &:hover {
+        background-image: url(./../../../assets/img/5_contact_section/checkbox_hover.png);
+      }
+      &:checked {
+        background-image: url(./../../../assets/img/5_contact_section/checkbox_checked.png);
+      }
+      &:checked:hover {
+        background-image: url(./../../../assets/img/5_contact_section/checkbox_checked_hover.png);
+      }
+    }
+    >span  {
+      width: 100%;
+      a {
+        text-decoration: none;
+        color: $firstColor;
+        &:hover {
+          cursor: pointer;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  >button {
+    @include button();
+  }
+}
