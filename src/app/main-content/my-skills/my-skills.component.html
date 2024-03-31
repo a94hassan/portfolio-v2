@@ -1,6 +1,6 @@
 <div><img src="./../../../assets/img/3_my_skills_section/shadow_my_skills.png" alt="shadow"></div>
-<section>
-  <div>
+<section id="my_skills">
+  <div data-aos="fade-right" data-aos-anchor-placement="top-center" data-aos-anchor="#my_skills">
     @for (skill of skillsService.skills; track $index) {
       <div class="trigger">
         <img src="./../../../assets/img/3_my_skills_section/{{skill.icon}}" alt="{{skill.name}} icon" class="target">
@@ -8,7 +8,7 @@
       </div>
     }
   </div>
-  <div>
+  <div data-aos="fade-in" data-aos-anchor-placement="top-center" data-aos-delay="1000" data-aos-anchor="#my_skills">
     <div>
       <h1>My skills</h1>
       <div></div>

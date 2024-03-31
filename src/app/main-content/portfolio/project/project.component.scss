@@ -6,6 +6,7 @@
   >div {
     @include flexBox($gap: 120px, $jc: flex-end);
     margin-bottom: 60px;
+    transition-timing-function: cubic-bezier(.175,.885,.32,1.275);
     >img {
       width: 420px;
     }

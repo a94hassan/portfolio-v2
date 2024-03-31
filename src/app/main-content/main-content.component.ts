@@ -13,5 +13,4 @@ import { ContactComponent } from './contact/contact.component';
   styleUrl: './main-content.component.scss'
 })
 export class MainContentComponent {
-
 }

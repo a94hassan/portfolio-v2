@@ -27,6 +27,7 @@ section {
     }
     >h1 {
       font-size: 90px;
+      transition-timing-function: cubic-bezier(.175,.885,.32,1.275);
     }
   }
   >div:last-of-type {
@@ -53,6 +54,7 @@ section {
       border: 2px dashed purple;
       width: 50%;
       @include flexBox($fd: column, $gap: 40px);
+      transition-timing-function: cubic-bezier(.175,.885,.32,1.275);
       >div {
         width: 100%;
         @include flexBox($jc: flex-end);

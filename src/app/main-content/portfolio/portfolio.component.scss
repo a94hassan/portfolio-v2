@@ -32,6 +32,7 @@ section {
       >h1 {
         font-size: 90px;
         padding: 0px 40px;
+        transition-timing-function: cubic-bezier(.175,.885,.32,1.275);
       }
       >div:last-of-type {
         height: 4px;
