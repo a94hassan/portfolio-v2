@@ -1,0 +1,82 @@
+@import './../../styles.scss';
+
+:host {
+  border: 2px dashed blue;
+  width: 100%;
+  @include flexBox();
+}
+
+section {
+  border: 2px dashed orange;
+  @include contentWidth();
+  @include flexBox($fd: column);
+  margin: 120px 0px;
+  >div:first-of-type {
+    border: 2px dashed green;
+    width: 100%;
+    @include flexBox($fd: column);
+    >div {
+      border: 2px dashed purple;
+      width: 100%;
+      @include flexBox();
+      >div:first-of-type {
+        width: 100%;
+        @include flexBox($jc: flex-end);
+        >div {
+          width: 120px;
+          height: 4px;
+          background-color: $firstColor;
+          border-top-left-radius: 2px;
+          border-bottom-left-radius: 2px;
+        }
+      }
+      >h1 {
+        min-width: max-content;
+        font-size: 90px;
+        padding: 0px 40px;
+        transition-timing-function: cubic-bezier(.175,.885,.32,1.275);
+      }
+      >div:last-of-type {
+        height: 4px;
+        width: 100%;
+        background-color: $firstColor;
+      }
+    }
+    >span {
+      margin-top: 16px;
+      text-align: center;
+      padding: 0px $paddingLR;
+    }
+  }
+  >div:last-of-type {
+    padding: $paddingLR;
+    >h4 {
+      font-size: 32px;
+      margin-bottom: 4px;
+    }
+    >p {
+      margin-bottom: 24px;
+    }
+    >ul {
+      margin-top: 16px;
+      padding: unset;
+      >li {
+        list-style: none;
+        &:first-of-type {
+          margin-bottom: 4px;
+        }
+        &:last-of-type {
+          margin-top: 8px;
+          >a {
+            text-decoration: none;
+            &:hover {
+              cursor: pointer;
+              text-decoration: underline 2px $secondColor;
+              text-underline-offset: 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -16,9 +16,19 @@ header {
   @include contentWidth();
   @include flexBox($jc: space-between);
   padding: 40px $paddingLR;
-  >img {
+  >a {
+    @include flexBox($gap: 16px);
+    text-decoration: none;
+    span {
+      font-size: 32px;
+      font-weight: 700;
+      &::first-letter {
+        color: $secondColor;
+      }
+    }
     &:hover {
       cursor: pointer;
     }
+
   }
 }

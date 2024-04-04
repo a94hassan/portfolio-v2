@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import AOS from "aos";
+import 'aos/dist/aos.css';
 
 @Component({
   selector: 'app-privacy-policy',
@@ -7,6 +9,12 @@ import { Component } from '@angular/core';
   templateUrl: './privacy-policy.component.html',
   styleUrl: './privacy-policy.component.scss'
 })
-export class PrivacyPolicyComponent {
-
+export class PrivacyPolicyComponent implements OnInit {
+  ngOnInit() {
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out'
+    });
+    AOS.refresh();
+  }
 }

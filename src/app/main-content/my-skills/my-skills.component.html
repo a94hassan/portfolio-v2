@@ -1,6 +1,6 @@
 <div><img src="./../../../assets/img/3_my_skills_section/shadow_my_skills.png" alt="shadow"></div>
-<section id="my_skills">
-  <div data-aos="fade-right" data-aos-anchor-placement="top-center" data-aos-anchor="#my_skills">
+<section id="my_skills_section">
+  <div data-aos="fade-right" data-aos-anchor-placement="top-center" data-aos-anchor="#my_skills_section">
     @for (skill of skillsService.skills; track $index) {
       <div class="trigger">
         <img src="./../../../assets/img/3_my_skills_section/{{skill.icon}}" alt="{{skill.name}} icon" class="target">
@@ -8,14 +8,14 @@
       </div>
     }
   </div>
-  <div data-aos="fade-in" data-aos-anchor-placement="top-center" data-aos-delay="1000" data-aos-anchor="#my_skills">
+  <div data-aos="fade-in" data-aos-anchor-placement="top-center" data-aos-delay="1000" data-aos-anchor="#my_skills_section">
     <div>
       <h1>My skills</h1>
       <div></div>
     </div>
     <p>I have grown my frontend developments skills that have allowed me to create different real projects.</p>
     <div>
-      <button>Get in touch</button>
+      <a href="#contact_section"><button>Get in touch</button></a>
     </div>
   </div>
 </section>

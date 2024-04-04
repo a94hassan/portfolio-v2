@@ -8,6 +8,7 @@
 
 section {
   border: 2px dashed orange;
+  scroll-margin-top: 120px;
   @include contentWidth();
   @include flexBox($fd: column);
   >div:first-of-type {
@@ -42,6 +43,8 @@ section {
     }
     >span {
       margin-top: 16px;
+      text-align: center;
+      padding: 0px $paddingLR;
     }
   }
 }

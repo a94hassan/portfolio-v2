@@ -17,6 +17,7 @@
 
 section {
   border: 2px dashed yellow;
+  scroll-margin-top: 320px;
   position: relative;
   z-index: 1;
   @include contentWidth();
@@ -66,7 +67,7 @@ section {
       padding-right: 100px;
       margin-top: 32px;
       @include flexBox();
-      >button {
+      button {
         @include button();
       }
     }

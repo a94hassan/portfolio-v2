@@ -19,15 +19,16 @@ footer {
   padding: 100px $paddingLR;
   >div:first-of-type {
     @include flexBox($ai:unset, $fd: column, $gap: 8px);
-    >img:hover {
-      cursor: pointer;
-    }
-    >span {
+    >a {
       width: max-content;
+      text-decoration: none;
       &:hover {
         cursor: pointer;
         text-decoration: underline 2px $secondColor;
         text-underline-offset: 8px;
+      }
+      &:first-of-type {
+        margin-bottom: 16px;
       }
     }
   }
@@ -36,7 +37,7 @@ footer {
   }
   >div:last-child {
     @include flexBox($gap: 40px);
-    >img {
+    img {
       width: 30px;
       &:hover {
         cursor: pointer;

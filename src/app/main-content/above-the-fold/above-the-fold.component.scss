@@ -9,6 +9,7 @@
 
 section {
   border: 2px dashed red;
+  scroll-margin-top: 100px;
   background-image: url(./../../../assets/img/1_above_the_fold_section/shadow_atf.png);
   background-repeat: no-repeat;
   background-position: bottom -180px left -80px;
@@ -47,7 +48,7 @@ section {
     }
     >div:last-of-type {
       transition-timing-function: cubic-bezier(.175,.885,.32,1.275);
-      >button {
+      button {
         @include button();
       }
     }
@@ -59,7 +60,7 @@ section {
   @include contentWidth();
   padding-right: 100px;
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   bottom: 0;
   @include flexBox($jc: space-between, $ai: flex-end);
   >div:first-of-type {
@@ -72,17 +73,23 @@ section {
       border-bottom-right-radius: 2px;
       transition-timing-function: cubic-bezier(.175,.885,.32,1.275);
     }
-    >img {
-      width: 30px;
+    >a {
+      text-decoration: none;
       transition-timing-function: cubic-bezier(.175,.885,.32,1.275);
-      &:hover {
-        cursor: pointer;
-        scale: 1.4;
+      >img {
+        width: 30px;
+        &:hover {
+          cursor: pointer;
+          scale: 1.4;
+        }
       }
-    }
-    >span {
-      font-size: 24px;
-      transition-timing-function: cubic-bezier(.175,.885,.32,1.275);
+      >span {
+        font-size: 24px;
+        &:hover {
+          cursor: pointer;
+          color: $secondColor;
+        }
+      }
     }
   }
   >div:last-of-type {
