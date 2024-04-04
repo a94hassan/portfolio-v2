@@ -29,18 +29,18 @@ section {
     >div:first-of-type {
       @include flexBox();
       >span {
-        margin-bottom: 10px;
-        font-size: 68px;
+        margin-top: -16px;
+        font-size: 60px;
         writing-mode: vertical-rl;
         transform: rotate(180deg);
       }
       >div {
         >h1 {
           margin: -24px 0;
-          font-size: 90px;
+          font-size: 78px;
         }
         >h2 {
-          font-size: 58px;
+          font-size: 59px;
           font-weight: 400;
           color: $firstColor;
         }
@@ -74,6 +74,7 @@ section {
       transition-timing-function: cubic-bezier(.175,.885,.32,1.275);
     }
     >a {
+      @include flexBox();
       text-decoration: none;
       transition-timing-function: cubic-bezier(.175,.885,.32,1.275);
       >img {

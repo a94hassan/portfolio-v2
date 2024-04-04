@@ -11,6 +11,9 @@ section {
   @include contentWidth();
   @include flexBox($fd: column);
   margin: 120px 0px;
+  background-image: url(./../../assets/img/7_privacy_policy/shadow_privacy_policy.png);
+  background-repeat: no-repeat;
+  background-position: right top;
   >div:first-of-type {
     border: 2px dashed green;
     width: 100%;
@@ -51,11 +54,13 @@ section {
   >div:last-of-type {
     padding: $paddingLR;
     >h4 {
-      font-size: 32px;
+      font-size: 24px;
+      font-weight: 400;
+      color: $firstColor;
       margin-bottom: 4px;
     }
     >p {
-      margin-bottom: 24px;
+      margin-bottom: 64px;
     }
     >ul {
       margin-top: 16px;

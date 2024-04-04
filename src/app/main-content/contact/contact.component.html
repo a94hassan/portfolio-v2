@@ -34,7 +34,7 @@
         <div>
           <div>
             <input type="checkbox" [ngModel] name="checkbox" #checkbox="ngModel" required>
-            <span>I've read the <a href="#">privacy policy</a> and agree to the processing of my data as outlined.</span> 
+            <span>I've read the <a href="privacy_policy">privacy policy</a> and agree to the processing of my data as outlined.</span> 
           </div>
           @if (checkbox.invalid && contactForm.submitted) {
             <span>Please accept the privacy policy.</span>

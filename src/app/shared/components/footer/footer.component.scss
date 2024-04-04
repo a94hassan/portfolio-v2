@@ -29,6 +29,15 @@ footer {
       }
       &:first-of-type {
         margin-bottom: 16px;
+        @include flexBox($gap: 16px);
+        text-decoration: none;
+        >span {
+          font-size: 40px;
+          font-weight: 700;
+          &::first-letter {
+            color: $secondColor;
+          }
+        }
       }
     }
   }

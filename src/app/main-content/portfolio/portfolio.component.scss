@@ -11,6 +11,9 @@ section {
   scroll-margin-top: 120px;
   @include contentWidth();
   @include flexBox($fd: column);
+  background-image: url(./../../../assets/img/4_portfolio_section/shadow_portfolio.png);
+  background-repeat: no-repeat;
+  background-position: right center;
   >div:first-of-type {
     border: 2px dashed green;
     width: 100%;

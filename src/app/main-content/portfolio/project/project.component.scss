@@ -8,7 +8,7 @@
     margin-bottom: 60px;
     transition-timing-function: cubic-bezier(.175,.885,.32,1.275);
     >img {
-      width: 420px;
+      width: 600px;
     }
     >div {
       width: 520px;
@@ -30,11 +30,17 @@
       >div:last-of-type {
         margin-top: 32px;
         @include flexBox($gap: 80px, $jc: unset);
-        >button:first-of-type {
-          @include button($switchColors: true);
-        }
-        >button:last-of-type {
-          @include button($transparent: true);
+        >a {
+          &:first-of-type {
+            >button {
+              @include button($switchColors: true);
+            }
+          }
+          &:last-of-type {
+            >button {
+              @include button($transparent: true);
+            }
+          }
         }
       }
     }
