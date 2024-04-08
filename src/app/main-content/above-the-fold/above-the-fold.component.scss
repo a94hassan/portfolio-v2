@@ -1,7 +1,6 @@
 @import './../../../styles.scss';
 
 :host {
-  border: 2px dashed blue;
   height: 100vh;
   width: 100%;
   max-width: 100vw;
@@ -9,7 +8,6 @@
 }
 
 section {
-  border: 2px dashed red;
   height: 100vh;
   scroll-margin-top: 100px;
   background-image: url(./../../../assets/img/1_above_the_fold_section/shadow_atf.png);
@@ -18,7 +16,6 @@ section {
   @include contentWidth();
   @include flexBox($fd: column);
   >div:first-of-type {
-    border: 2px dashed turquoise;
     margin-top: 640px;
     width: 100%;
     padding: 0 $paddingLR;
@@ -28,7 +25,6 @@ section {
       width: 500px;
     }
     >div:first-of-type {
-      border: 2px dashed green;
       width: 100%;
       @include flexBox($fd: column, $gap: 32px);
       transition-timing-function: cubic-bezier(.175,.885,.32,1.275);
@@ -72,7 +68,6 @@ section {
 
 
 .info {
-  border: 2px dashed violet;  
   @include contentWidth();
   padding-right: 100px;
   position: absolute;

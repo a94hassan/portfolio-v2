@@ -1,7 +1,6 @@
 @import './../../../../styles.scss';
 
 :host {
-  border: 2px dotted white;
   width: 100%;
   max-width: 100vw;
   position: fixed;
@@ -10,12 +9,11 @@
   left: 0;
   right: 0;
   background-color: rgba(20, 29, 47, 0.8);
-  backdrop-filter: blur(20px);
   @include flexBox();
 }
 
 header {
-  border: 2px dashed yellow;
+  backdrop-filter: blur(20px);
   @include contentWidth();
   @include flexBox($jc: space-between);
   padding: 40px $paddingLR;

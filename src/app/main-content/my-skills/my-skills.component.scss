@@ -1,7 +1,6 @@
 @import './../../../styles.scss';
 
 :host {
-  border: 2px dashed blue;
   width: 100%;
   max-width: 100vw;
   padding-top: 100px;
@@ -17,7 +16,6 @@
 }
 
 section {
-  border: 2px dashed yellow;
   scroll-margin-top: 320px;
   position: relative;
   z-index: 1;
@@ -30,7 +28,6 @@ section {
     }
   }
   >div:first-of-type {
-    border: 2px dashed red;
     width: 60%;
     padding-left: 100px;
     @include flexBox($jc: unset, $gap: 32px);
@@ -46,7 +43,6 @@ section {
     }
   }
   >div:last-of-type {
-    border: 2px dashed green;
     width: 40%;
     @include flexBox($fd: column, $ai: flex-end, $gap: 20px);
     >div:first-of-type {

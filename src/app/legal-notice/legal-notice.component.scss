@@ -1,13 +1,11 @@
 @import './../../styles.scss';
 
 :host {
-  border: 2px dashed blue;
   width: 100%;
   @include flexBox();
 }
 
 section {
-  border: 2px dashed orange;
   @include contentWidth();
   @include flexBox($fd: column);
   margin: 160px 0px;
@@ -15,11 +13,9 @@ section {
   background-repeat: no-repeat;
   background-position: right bottom;
   >div:first-of-type {
-    border: 2px dashed green;
     width: 100%;
     @include flexBox($fd: column);
     >div {
-      border: 2px dashed purple;
       width: 100%;
       @include flexBox();
       >div:first-of-type {

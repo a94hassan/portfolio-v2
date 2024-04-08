@@ -27,9 +27,20 @@ switch ($_SERVER['REQUEST_METHOD']) {
             $headers[] = 'Content-type: text/html; charset=utf-8';
 
             // Additional headers
-            $headers[] = "From: noreply@mywebsite.com";
+            $headers[] = "From: contact@hassan-ammar.com";
 
             mail($recipient, $subject, $message, implode("\r\n", $headers));
+
+            // Hinzugefügt: Send autoresponder
+            $autoresponderSubject = "Thank you for contacting me";
+            $autoresponderMessage = "Dear $name,<br><br>Thank you for contacting me. I have received your message and will get back to you as soon as possible.<br><br>Best regards,<br>Hassan Ammar";
+            $autoresponderHeaders   = array();
+            $autoresponderHeaders[] = 'MIME-Version: 1.0';
+            $autoresponderHeaders[] = 'Content-type: text/html; charset=utf-8';
+            $autoresponderHeaders[] = "From: contact@hassan-ammar.com";
+
+            // Send autoresponder email to sender
+            mail($email, $autoresponderSubject, $autoresponderMessage, implode("\r\n", $autoresponderHeaders));
             break;
         default: //Reject any non POST or OPTIONS requests.
             header("Allow: POST", true, 405);
