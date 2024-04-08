@@ -2,8 +2,10 @@
 
 :host {
   border: 2px dotted white;
+  width: 100%;
+  max-width: 100vw;
   position: fixed;
-  z-index: 4;
+  z-index: 7;
   top: 0;
   left: 0;
   right: 0;
@@ -31,5 +33,35 @@ header {
       cursor: pointer;
     }
 
+  }
+}
+
+@media (max-width: 1000px) {
+  header {
+    padding: 20px $paddingLR1000;
+    a {
+      img {
+        width: 40px;
+      }
+      span {
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  header {
+    padding: 20px $paddingLR500;
+  }
+}
+
+@media (max-width: 400px) {
+  header {
+    >a {
+      >span {
+        display: none;
+      }
+    }
   }
 }

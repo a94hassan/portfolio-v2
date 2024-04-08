@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, OnInit} from '@angular/core';
 import AOS from "aos";
 import 'aos/dist/aos.css';
 
 @Component({
   selector: 'app-above-the-fold',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './above-the-fold.component.html',
   styleUrl: './above-the-fold.component.scss'
 })

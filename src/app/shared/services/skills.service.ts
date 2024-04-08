@@ -22,6 +22,14 @@ export class SkillsService {
       icon: 'javascript.png',
     },
     {
+      name: 'SCSS',
+      icon: 'scss.png',
+    },
+    {
+      name: 'CSS',
+      icon: 'css.png',
+    },
+    {
       name: 'HTML',
       icon: 'html.png',
     },
@@ -34,20 +42,20 @@ export class SkillsService {
       icon: 'git.png',
     },
     {
-      name: 'CSS',
-      icon: 'css.png',
-    },
-    {
       name: 'Rest-API',
       icon: 'rest_api.png',
     },
     {
-      name: 'Scrum',
-      icon: 'scrum.png',
-    },
-    {
       name: 'Material Design',
       icon: 'material_design.png',
+    },
+    {
+      name: 'Bootstrap',
+      icon: 'bootstrap.png',
+    },
+    {
+      name: 'Scrum',
+      icon: 'scrum.png',
     }
   ]
 }

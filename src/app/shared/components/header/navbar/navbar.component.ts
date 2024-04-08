@@ -8,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
-
+  toggleIcon(navIcon: HTMLElement, dialog: HTMLElement) {
+    navIcon.classList.toggle('open');
+    dialog.classList.toggle('visible');
+  }
 }

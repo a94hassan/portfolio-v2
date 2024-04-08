@@ -3,6 +3,8 @@ $firstColor: #4B47FF;
 $secondColor: #00BEE8;
 $contentWidth: 1440px;
 $paddingLR: 100px;
+$paddingLR1000: 50px;
+$paddingLR500: 20px;
 $transition: all 125ms ease-in-out;
 
 @mixin flexBox($display: flex, $jc: center, $ai: center, $fd: row, $gap: 0) {
@@ -18,18 +20,18 @@ $transition: all 125ms ease-in-out;
   max-width: $contentWidth;
 }
 
-@mixin button($switchColors: false, $transparent: false) {
+@mixin button($switchColors: false, $transparent: false, $mobile: false) {
   $hPadding: true;
   $bgColor: $secondColor;
   $hBgColor: $firstColor;
   @if $switchColors {$bgColor: $firstColor; $hBgColor: $secondColor; $hPadding: false};
   @if $transparent {$hPadding: false};
   $borderStyle: if($transparent, 1px solid $secondColor, none);
-  padding: 12px 24px;
+  padding: if($mobile, 8px 16px, 12px 24px);
   background-color: if($transparent, transparent, $bgColor);
   border: $borderStyle;
   border-radius: 10px;
-  font-size: 24px;
+  font-size: if($mobile, 18px, 24px);
   margin: 4px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
   &:hover {
@@ -62,6 +64,13 @@ $transition: all 125ms ease-in-out;
 
 html {
   background-color: $bgColor;
+  overflow-x: hidden;
+}
+
+@media (max-width: 720px) {
+  @mixin button() { 
+    padding: 2px 2px;
+  }
 }
 
 

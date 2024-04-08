@@ -2,60 +2,61 @@
 
 :host {
   border: 2px dashed turquoise;
+  width: 100%;
+  max-width: 100vw;
   @include flexBox($fd: column);
-  >img {
-    width: 1440px;
-    margin-top: -540px;
-    position: relative;
-    z-index: 1;
-  }
   >div {
     border: 2px dashed purple;
-    width: 1440px;
-    margin-top: -740px;
+    margin-top: -160px;
     overflow: hidden;
+    @include contentWidth();
     @include flexBox($jc: flex-end);
     position: relative;
     z-index: 2;
     >img {
       margin-right: -440px;
+      overflow: hidden;
     }
   }
 }
 
 section {
   border: 2px dashed orange;
-  scroll-margin-top: 120px;
+  scroll-margin-top: 150px;
   position: relative;
   z-index: 2;
-  margin-top: -540px;
+  margin-top: -560px;
   padding: 144px 0px;
   @include contentWidth();
   @include flexBox();
   >div:first-of-type {
     border: 2px dashed red;
-    width: 50%;
+    flex: 1;
     padding-left: 100px;
-    padding-right: 144px;
     line-height: 1.25;
-    >h1 {
-      font-size: 90px;
-      margin-bottom: 16px;
-    }
-    >p {
-      margin-bottom: 32px;
-    }
     >div {
-      margin-bottom: 32px;
-      @include flexBox($ai: flex-start);
-      >img {
-        padding: 0px 32px;
+      border: 2px dashed yellow;
+      @include flexBox($fd: column, $ai: flex-start);
+      width: 480px;
+      >h1 {
+        font-size: 90px;
+        margin-bottom: 16px;
+      }
+      >p {
+        margin-bottom: 32px;
+      }
+      >div {
+        margin-bottom: 32px;
+        @include flexBox($ai: flex-start);
+        >img {
+          padding: 0px 32px;
+        }
       }
     }
   }
   >div:last-of-type {
     border: 2px dashed pink;
-    width: 50%;
+    flex: 1;
     @include flexBox();
     >div:first-of-type {
       transition-timing-function: cubic-bezier(.175,.885,.32,1.275);
@@ -69,6 +70,117 @@ section {
       height: 4px;
       width: 100%;
       background-color: $secondColor;
+    }
+  }
+}
+
+@media (max-width: 1440px) {
+ section {
+  >div:first-of-type {
+    >div {
+      margin-right: 10vw;
+      >h1 {
+        font-size: clamp(50px, 6.5vw, 90px);
+      }
+    }
+  }
+  >div:last-of-type {
+    width: unset;
+    >div:first-of-type {
+      >img {
+        width: 30vw;
+      }
+    }
+  }
+ }
+}
+
+@media (max-width: 1200px) {
+  section {
+    >div:first-of-type {
+      >div {
+        margin-right: 8vw;
+        width: 40vw;
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  section {
+    >div:first-of-type {
+      padding-left: 50px;
+      >div {
+        margin-right: 5vw;
+        width: 50vw;
+      }
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  :host {
+    >div {
+      >img {
+        margin-right: -500px;
+      }
+    }
+  }
+
+  section {
+    padding: 100px 0px;
+    >div:first-of-type {
+      padding: 0 $paddingLR1000;
+      >div {
+        width: 100%;
+      }
+    }
+    >div:last-of-type {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  :host {
+    >div {
+      >img {
+        margin-right: -540px;
+      }
+    }
+  }
+  
+  section {
+    >div:first-of-type {
+      padding: 0 $paddingLR500;
+      >div {
+        >h1 {
+          font-size: clamp(40px, 10vw, 60px);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  :host {
+    >div {
+      >img {
+        margin-right: -580px;
+      }
+    }
+  }
+
+  section {
+    padding: 72px 0px;
+    >div:first-of-type {
+      >div {
+        >div {
+          >img {
+            padding: 0px 8px;
+          }
+        }
+      }
     }
   }
 }

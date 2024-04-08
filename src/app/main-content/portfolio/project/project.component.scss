@@ -5,12 +5,14 @@
   padding: 100px $paddingLR;
   >div {
     @include flexBox($gap: 120px, $jc: flex-end);
-    margin-bottom: 60px;
+    margin-bottom: 120px;
     transition-timing-function: cubic-bezier(.175,.885,.32,1.275);
     >img {
+      border: 2px dashed yellowgreen;
       width: 600px;
     }
     >div {
+      border: 2px dashed yellow;
       width: 520px;
       >div:first-of-type {
         >h4 {
@@ -47,7 +49,7 @@
   }
 }
 
-:host .alternate-style {
+:host .mirrored-style {
   @include flexBox($gap: 120px, $jc: flex-end, $fd: row-reverse);
   >div {
     text-align: right;
@@ -55,4 +57,165 @@
       @include flexBox($gap: 80px, $jc: flex-end);
     }
   }
+}
+
+@media(max-width: 1440px) {
+  :host {
+    >div {
+      @include flexBox($gap: 8vw, $jc: flex-end);
+      >img {
+        width: 50%;
+      }
+      >div {
+        width: 50%;
+      }
+    }
+  }
+
+  :host .mirrored-style {
+    @include flexBox($gap: 8vw, $jc: flex-end, $fd: row-reverse);
+  }
+}
+
+@media(max-width: 1200px) {
+  :host {
+    >div {
+      @include flexBox($gap: 7vw, $jc: flex-end);
+      >img {
+        width: 40%;
+      }
+      >div {
+        width: 60%;
+      }
+    }
+  }
+
+  :host .mirrored-style {
+    @include flexBox($gap: 7vw, $jc: flex-end, $fd: row-reverse);
+  }
+}
+
+@media(max-width: 1000px) {
+  :host {
+    padding: 100px $paddingLR1000;
+    >div {
+      @include flexBox($gap: 6vw, $jc: flex-end);
+      >img {
+        width: 40%;
+      }
+      >div {
+        width: 60%;
+      }
+    }
+  }
+
+  :host .mirrored-style {
+    @include flexBox($gap: 6vw, $jc: flex-end, $fd: row-reverse);
+  }
+}
+
+@media(max-width: 850px) {
+  :host {
+    >div {
+      @include flexBox($gap: 4vw, $jc: flex-end);
+      >img {
+        width: 45%;
+      }
+      >div {
+        width: 55%;
+      }
+      >div {
+        >div:last-of-type {
+          @include flexBox($jc: space-between);
+        }
+      }
+    }
+  }
+
+  :host .mirrored-style {
+    @include flexBox($gap: 4vw, $jc: flex-end, $fd: row-reverse);
+    >div {
+      >div:last-of-type {
+        @include flexBox($jc: space-between);
+      }
+    }
+  }
+}
+
+@media(max-width: 720px) {
+ :host {
+  padding: 80px $paddingLR1000;
+  >div {
+    @include flexBox($gap: 16px, $jc: flex-end, $fd: column);
+    margin-bottom: 100px;
+    >img {
+      width: 80%;
+    }
+    >div {
+      width: 100%;
+      text-align: center;
+      >div:last-of-type {
+        @include flexBox($jc: space-evenly);
+      }
+    }
+  }
+ }
+
+ :host .mirrored-style {
+  @include flexBox($gap: 16px, $jc: flex-end, $fd: column);
+  >div {
+    text-align: center;
+    >div:last-of-type {
+      @include flexBox($jc: space-evenly);
+    }
+  }
+ }
+}
+
+@media(max-width: 500px) {
+  :host {
+    padding: 50px $paddingLR500;
+    >div {
+      >div {
+        >div:last-of-type {
+          >a {
+            &:first-of-type {
+              >button {
+                @include button($switchColors: true, $mobile: true);
+              }
+            }
+            &:last-of-type {
+              >button {
+                @include button($transparent: true, $mobile: true);
+              }
+            }
+          }
+        }
+      }
+    }
+   }
+}
+
+@media(max-width: 400px) {
+  :host {
+    >div {
+      margin-bottom: 80px;
+      >img {
+        width: 100%;
+      }
+      >div {
+        >div:last-of-type {
+          @include flexBox($jc: space-around);
+        }
+      }
+    }
+   }
+  
+   :host .mirrored-style {
+    >div {
+      >div:last-of-type {
+        @include flexBox($jc: space-around);
+      }
+    }
+   }
 }

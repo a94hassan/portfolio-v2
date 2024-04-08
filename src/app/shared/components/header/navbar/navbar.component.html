@@ -2,4 +2,17 @@
   <a href="#about_me_section">About me</a>
   <a href="#my_skills_section">Skills</a>
   <a href="#portfolio_section">Portfolio</a>
+  <div class="burger_menu" #navIcon (click)="toggleIcon(navIcon, dialog)">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 </nav>
+<div #dialog>
+  <div>
+    <a href="#about_me_section" (click)="toggleIcon(navIcon, dialog)">About me</a>
+    <a href="#my_skills_section" (click)="toggleIcon(navIcon, dialog)">My skills</a>
+    <a href="#portfolio_section" (click)="toggleIcon(navIcon, dialog)">Portfolio</a>
+    <a href="#contact_section" (click)="toggleIcon(navIcon, dialog)">Contact</a>
+  </div>
+</div>

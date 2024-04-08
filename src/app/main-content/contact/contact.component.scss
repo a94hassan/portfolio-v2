@@ -6,6 +6,7 @@ $invalid: #E61C40;
 :host {
   border: 2px dashed blue;
   width: 100%;
+  max-width: 100vw;
   @include flexBox();
 }
 
@@ -44,14 +45,17 @@ section {
     >div:first-of-type {
       border: 2px dashed orange;
       width: 50%;
-      padding-right: 160px;
-      >h4 {
-        font-size: 32px;
-      }
-      >p {
-        line-height: 1.25;
-        margin-top: 32px;
-        margin-bottom: 24px;
+      >div {
+        max-width: 480px;
+        margin-right: 32px;
+        >h4 {
+          font-size: 32px;
+        }
+        >p {
+          line-height: 1.25;
+          margin-top: 32px;
+          margin-bottom: 24px;
+        }
       }
     }
     >div:last-of-type {
@@ -130,7 +134,7 @@ form {
     margin-top: 16px;
     margin-bottom: 32px;
     >div {
-      @include flexBox($gap: 8px);
+      @include flexBox($gap: 8px, $ai: unset);
       input {
         appearance: none; 
         -webkit-appearance: none;
@@ -198,4 +202,68 @@ form {
 
 .disabled {
   background-color: grey !important;
+}
+
+@media(max-width: 1440px) {
+  section {
+    >div:first-of-type {
+      >h1 {
+        font-size: clamp(50px, 6.5vw, 90px);
+      }
+    }
+  }
+}
+
+@media(max-width: 1000px) {
+  section {
+    background-position: bottom -400px left -50px;
+    >div:first-of-type {
+      >div {
+        width: 32px;
+        margin-right: 18px;
+      }
+    }
+    >div:last-of-type {
+      padding: 0 $paddingLR1000;
+    }
+  }
+}
+
+@media(max-width: 720px) {
+  section {
+    >div:last-of-type {
+      @include flexBox($fd: column, $gap: 48px);
+      >div:first-of-type {
+        width: 100%;
+        padding-right: unset;
+      }
+      >div:last-of-type {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media(max-width: 500px) {
+  section {
+    background-position: bottom -500px left -100px;
+    >div:first-of-type {
+      >div {
+        width: 16px;
+        margin-right: 4px;
+      }
+      >h1 {
+        font-size: clamp(40px, 10vw, 60px);
+      }
+    }
+    >div:last-of-type {
+      padding: 0 $paddingLR500;
+    }
+  }
+
+  form {
+    >button {
+      @include button($mobile: true);
+    }
+  }
 }
