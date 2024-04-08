@@ -17,7 +17,7 @@ nav {
   >div {
     height: 100vh;
     position: absolute;
-    z-index: 6;
+    z-index: 9;
     top: 0;
     left: 100%;
     right: 0;
@@ -53,7 +53,7 @@ nav {
 
 .burger_menu{
   position: absolute;
-  z-index: 7;
+  z-index: 10;
   width: 35px;
   height: 30px;
   position: relative;

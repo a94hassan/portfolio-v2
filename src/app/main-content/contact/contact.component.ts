@@ -16,7 +16,7 @@ export class ContactComponent implements OnInit {
 
   http = inject(HttpClient);
 
-  mailTest = true;
+  mailTest = false;
 
   contactData = {
     name: '',
@@ -48,7 +48,7 @@ export class ContactComponent implements OnInit {
       this.http.post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
           next: (response) => {
-
+            this.toggleFeedback();
             ngForm.resetForm();
           },
           error: (error) => {
@@ -57,8 +57,18 @@ export class ContactComponent implements OnInit {
           complete: () => console.info('send post complete'),
         });
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-
+      this.toggleFeedback();
       ngForm.resetForm();
+    }
+  }
+
+  toggleFeedback() {
+    let feedback = document.getElementById('feedback');
+    if (feedback) {
+      feedback.classList.add('show');
+      setTimeout(() => {
+        feedback.classList.remove('show');
+      }, 4000);
     }
   }
 }
