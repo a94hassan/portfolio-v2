@@ -1,79 +1,118 @@
 @import './../../../styles.scss';
 
 :host {
+  border: 2px dashed blue;
   height: 100vh;
+  height: 100svh;
   width: 100%;
-  max-width: 100vw;
   @include flexBox();
+  >div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateX(-380px) translateY(140px);
+    >img {
+      width: 100%;
+    }
+  }
 }
 
 section {
+  border: 2px dashed green;
+  position: static;
+  z-index: 1;
   height: 100vh;
+  height: 100svh;
   scroll-margin-top: 100px;
-  background-image: url(./../../../assets/img/1_above_the_fold_section/shadow_atf.png);
-  background-repeat: no-repeat;
-  background-position: bottom -100px left -80px;
   @include contentWidth();
   @include flexBox($fd: column);
   >div:first-of-type {
-    margin-top: 640px;
+    border: 2px dashed pink;
     width: 100%;
     padding: 0 $paddingLR;
-    @include flexBox();
-    >img {
-      margin-top: 64px;
-      width: 500px;
-    }
+    @include flexBox($fd: column);
+    overflow-x: visible;
     >div:first-of-type {
+      border: 2px dashed purple;
       width: 100%;
-      @include flexBox($fd: column, $gap: 32px);
-      transition-timing-function: cubic-bezier(.175,.885,.32,1.275);
-      position: relative;
-      z-index: 4;
-      >div:first-of-type {
-        @include flexBox();
-        >span {
-          margin-top: -16px;
-          font-size: 59px;
-          writing-mode: vertical-rl;
-          transform: rotate(180deg);
-        }
-        >div {
-          >h1 {
-            margin: -24px 0;
-            font-size: 75px;
-          }
-          >h2 {
-            font-size: 57px;
-            font-weight: 400;
-            color: $firstColor;
-          }
-        }
+      @include flexBox($jc: space-between);
+      >img {
+        border: 2px dashed orange;
+        width: 500px;
+        margin-top: 64px;
       }
-      >div:last-of-type {
+      >div:first-of-type {
+        border: 2px dashed turquoise;
+        @include flexBox($fd: column, $gap: 32px, $ai: flex-end);
         transition-timing-function: cubic-bezier(.175,.885,.32,1.275);
-        button {
-          @include button();
+        position: relative;
+        z-index: 4;
+        >div:first-of-type {
+          @include flexBox();
+          >span {
+            margin-top: -14px;
+            font-size: 59px;
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+          }
+          >div {
+            >h1 {
+              margin: -24px 0;
+              font-size: 76px;
+            }
+            >h2 {
+              font-size: 57.5px;
+              font-weight: 400;
+              color: $firstColor;
+            }
+          }
+        }
+        >div:last-of-type {
+          border: 2px dashed rosybrown;
+          width: 100%;
+          height: 64px;
+          transition-timing-function: cubic-bezier(.175,.885,.32,1.275);
+          @include flexBox();
+          button {
+            @include button();
+          }
         }
       }
     }
   }
   >div:last-of-type {
-    @include contentWidth();
-    margin-top: -440px;
-    position: relative;
+    border: 2px dashed orangered;
+    width: 100%;
+    position: absolute;
     overflow-x: clip;
+    top: 28%;
+    >img {
+      width: 100%;
+      position: absolute;
+    }
+  }
+}
+
+.german {
+  >span {
+    font-size: 38px !important;
+  }
+  >div {
+    >h2 {
+      font-size: 55.5px !important;
+    }
   }
 }
 
 
 .info {
+  border: 2px dashed greenyellow;
   @include contentWidth();
+  @include flexBox($jc: space-between, $ai: flex-end);
   padding-right: 100px;
   position: absolute;
   z-index: 3;
   bottom: 8px;
-  @include flexBox($jc: space-between, $ai: flex-end);
   >div:first-of-type {
     @include flexBox($gap: 40px);
     >div{
@@ -110,7 +149,7 @@ section {
     >span {
       font-size: 24px;
       writing-mode: vertical-lr;
-      line-height: 0.8;
+      line-height: 1.25;
     }
   }
 }
@@ -121,91 +160,198 @@ section {
 	60% {transform: translateY(-15px);}
 }
 
+@media (max-width: 3440px) {
+  section {
+    >div:last-of-type {
+      position: absolute;
+      top: 9%;
+    }
+  }
+}
+
+@media (max-width: 2560px) {
+  section {
+    >div:last-of-type {
+      position: absolute;
+      top: 24%;
+    }
+  }
+}
+
+@media (max-width: 1920px) {
+  section {
+    >div:last-of-type {
+      position: absolute;
+      top: 28%;
+    }
+  }
+}
+
+@media (max-width: 1800px) {
+  section {
+    >div:last-of-type {
+      position: absolute;
+      top: 34%;
+    }
+  }
+}
+
+@media (max-width: 1700px) {
+  section {
+    >div:last-of-type {
+      position: absolute;
+      top: 36%;
+    }
+  }
+}
+
+@media (max-width: 1600px) {
+  section {
+    >div:last-of-type {
+      position: absolute;
+      top: 39%;
+    }
+  }
+}
+
+@media (max-width: 1500px) {
+  section {
+    >div:last-of-type {
+      position: absolute;
+      top: 41%;
+    }
+  }
+}
+
 @media (max-width: 1440px) {
-  section {
-    background-size: 60vw;
-    background-position: bottom left -100px;
-    >div:first-of-type {
-      >img {
-        width: 40%;
-      }
-      >div:first-of-type {
-        width: 60%;
-        >div:first-of-type {
-          >span {
-            font-size: 4vw;
-          }
-          >div {
-            h1 {
-              font-size: 5.2vw;
-            }
-            h2 {
-              font-size: 3.9vw;
-            }
-          }
-        }
-      }
+  :host {
+    >div {
+      transform: translate(-50%, -50%) translateX(-24vw) translateY(12vh);
     }
   }
-}
 
-@media (max-width: 1200px) {
   section {
     >div:first-of-type {
-      >img {
-        width: 40%;
-      }
       >div:first-of-type {
-        width: 100%;
-        margin-top: 40px;
-        >div:first-of-type {
-          >span {
-            font-size: 3.6vw;
-          }
-          >div {
-            h1 {
-              font-size: 5vw;
-            }
-            h2 {
-              font-size: 3.75vw;
-            }
-          }
+        >img {
+          width: 40%;
         }
-      }
-    }
-  }
-}
-
-
-@media (max-width: 1000px) {
-  section {
-    background-position: bottom 200px center;
-    >div:first-of-type {
-      @include flexBox($fd: column);
-      padding: 0 $paddingLR1000;
-      margin-top: 400px;
-      >img {
-        width: 40%;
-        margin-top: 32px;
-      }
-      >div:first-of-type {
         >div:first-of-type {
-          >span {
-            font-size: 4.3vw;
-          }
-          >div {
-            h1 {
-              font-size: 6vw;
+          >div:first-of-type {
+            >span {
+              font-size: 4vw;
             }
-            h2 {
-              font-size: 4.5vw;
+            >div {
+              h1 {
+                font-size: 5.2vw;
+              }
+              h2 {
+                font-size: 3.9vw;
+              }
             }
           }
         }
       }
     }
     >div:last-of-type {
-      margin-top: -680px;
+      top: 42%;
+    }
+  }
+
+  .german {
+    >span {
+      font-size: 2.5vw !important;
+    }
+    >div {
+      >h2 {
+        font-size: 3.64vw !important;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 1200px) {
+  section {
+    >div:first-of-type {
+      >div:first-of-type {
+        >img {
+          width: 40%;
+        }
+        >div:first-of-type {
+          margin-top: 40px;
+          >div:first-of-type {
+            >span {
+              font-size: 3.6vw;
+            }
+            >div {
+              h1 {
+                font-size: 5vw;
+              }
+              h2 {
+                font-size: 3.75vw;
+              }
+            }
+          }
+        }
+      }
+    }
+    >div:last-of-type {
+      top: 42%;
+    }
+  }
+
+  .german {
+    >span {
+      font-size: 2.3vw !important;
+    }
+    >div {
+      >h2 {
+        font-size: 3.49vw !important;
+      }
+    }
+  }
+}
+
+
+
+@media (max-width: 1000px) {
+  :host {
+    >div {
+      transform: translate(-50%, -50%) translateX(-11vw) translateY(2vh);
+      >img {
+        width: 140%;
+      }
+    }
+  }
+
+  section {
+    >div:first-of-type {
+      padding: 0 $paddingLR1000;
+      >div:first-of-type {
+        @include flexBox($fd: column);
+        >img {
+          width: 40%;
+        }
+        >div:first-of-type {
+          >div:first-of-type {
+            >span {
+              font-size: 4.3vw;
+            }
+            >div {
+              h1 {
+                font-size: 6vw;
+              }
+              h2 {
+                font-size: 4.5vw;
+              }
+            }
+          }
+        }
+      }
+    }
+    >div:last-of-type {
+      top: 36%;
     }
   }
 
@@ -227,59 +373,122 @@ section {
       }
     }
   }
+
+  .german {
+    >span {
+      font-size: 2.7vw !important;
+    }
+    >div {
+      >h2 {
+        font-size: 4.2vw !important;
+      }
+    }
+  }
 }
 
 @media (max-width: 900px) {
-  section {
-    background-position: bottom 260px center;
-    >div:first-of-type {
+  :host {
+    >div {
+      transform: translate(-50%, -50%) translateX(-16vw) translateY(1vh);
       >img {
-        width: 50%;
+        width: 160%;
       }
+    }
+  }
+
+  section {
+    >div:first-of-type {
+      >div:first-of-type {
+        >img {
+          width: 50%;
+        }
+      }
+    }
+    >div:last-of-type {
+      top: 42%;
     }
   }
 }
 
 @media (max-width: 800px) {
   section {
-    background-position: bottom 200px center;
-    background-size: 80%;
-    >div:first-of-type {
-      margin-top: 450px;
-      >img {
-        width: 60%;
-      }
-      >div:first-of-type {
-        @include flexBox($fd: column, $gap: 16px);
-      }
-    }
-    >div:last-of-type {
-      margin-top: -640px;
-    }
-  }
-}
-
-@media (max-width: 720px) {
-  section {
     >div:first-of-type {
       >div:first-of-type {
+        >img {
+          width: 60%;
+        }
         >div:first-of-type {
-          >span {
-            font-size: 4.9vw;
-          }
-          >div {
-            h1 {
-              font-size: 7vw;
+          @include flexBox($fd: column, $gap: 16px);
+          >div:first-of-type {
+            >span {
+              font-size: 4.5vw;
+              margin-bottom: 4px;
             }
-            h2 {
-              font-size: 5.25vw;
+            >div {
+              h1 {
+                font-size: 6.5vw;
+              }
+              h2 {
+                font-size: 4.9vw;
+              }
             }
           }
         }
       }
     }
     >div:last-of-type {
-      margin-top: -650px;
+      top: 46%;
+    }
+  }
+
+  .german {
+    >span {
+      font-size: 2.9vw !important;
+    }
+    >div {
+      >h2 {
+        font-size: 4.55vw !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  :host {
+    >div {
+      transform: translate(-50%, -50%) translateX(-20vw);
+      >img {
+        width: 180%;
+      }
+    }
+  }
+
+  section {
+    >div:first-of-type {
+      >div:first-of-type {
+        >img {
+          width: 70%;
+        }
+        >div:first-of-type {
+          >div:first-of-type {
+            >span {
+              font-size: 4.9vw;
+              margin-bottom: 4px;
+            }
+            >div {
+              h1 {
+                font-size: 7vw;
+              }
+              h2 {
+                font-size: 5.25vw;
+              }
+            }
+          }
+        }
+      } 
+    }
+    >div:last-of-type {
+      top: 48%;
     }
   }
 
@@ -292,55 +501,102 @@ section {
       }
     }
   }
+
+  .german {
+    >span {
+      font-size: 3vw !important;
+    }
+    >div {
+      >h2 {
+        font-size: 4.9vw !important;
+      }
+    }
+  }
 }
 
 @media (max-width: 600px) {
-  section {
-    background-position: bottom 200px center;
-    background-size: 100%;
-    >div:first-of-type {
-      margin-top: 450px;
+  :host {
+    >div {
+      transform: translate(-50%, -50%) translateX(-26vw);
       >img {
-        width: 80%;
+        width: 200%;
       }
+    }
+  }
+
+  section {
+    >div:first-of-type {
       >div:first-of-type {
+        >img {
+          width: 85%;
+        }
         >div:first-of-type {
-          >span {
-            font-size: 5.6vw;
-          }
-          >div {
-            >h1 {
-              font-size: 7.5vw;
+          >div:first-of-type {
+            >span {
+              font-size: 5.4vw;
+              margin-bottom: 8px;
             }
-            >h2 {
-              margin-top: 8px;
-              font-size: 5.7vw;
+            >div {
+              >h1 {
+                font-size: 7.5vw;
+              }
+              >h2 {
+                margin-top: 8px;
+                font-size: 5.7vw;
+              }
             }
           }
         }
       }
     }
     >div:last-of-type {
-      margin-top: -640px;
+      top: 50%;
+    }
+  }
+
+  .german {
+    >span {
+      font-size: 3.5vw !important;
+    }
+    >div {
+      >h2 {
+        font-size: 5.25vw !important;
+      }
     }
   }
 }
 
 @media (max-width: 500px) {
   section {
-    background-position: bottom 280px center;
     >div:first-of-type {
       padding: 0 $paddingLR500;
       >div:first-of-type {
-        >div:last-of-type {
-          button {
-            @include button($mobile: true);
+        >div:first-of-type {
+          >div:first-of-type {
+            >span {
+              font-size: 6.3vw;
+              margin-bottom: 8px;
+            }
+            >div {
+              >h1 {
+                font-size: 8.4vw;
+              }
+              >h2 {
+                margin-top: 12px;
+                font-size: 6.3vw;
+              }
+            }
+          }
+          >div:last-of-type {
+            button {
+              @include button($mobile: true);
+            }
           }
         }
       }
     }
     >div:last-of-type {
-      margin-top: -600px;
+      top: 52%;
     }
   }
 
@@ -352,40 +608,65 @@ section {
       }
     }
   }
+
+  .german {
+    >span {
+      font-size: 4.2vw !important;
+    }
+    >div {
+      >h2 {
+        font-size: 5.85vw !important;
+      }
+    }
+  }
 }
 
 @media (max-width: 400px) {
   section {
-    background-position: bottom 320px center;
-    background-size: 120%;
     >div:first-of-type {
-      margin-top: 450px;
-      >img {
-        width: 100%;
-      }
       >div:first-of-type {
+        >img {
+          max-height: 50vh;
+          max-width: 100%;
+        }
         >div:first-of-type {
-          >span {
-            font-size: 6.5vw;
-            margin-bottom: 8px;
-          }
-          >div {
-            >h1 {
-              font-size: 8.5vw;
+          >div:first-of-type {
+            >span {
+              font-size: 6vw;
+              margin-bottom: 8px;
             }
-            >h2 {
-              margin-top: 12px;
-              font-size: 6.4vw;
+            >div {
+              >h1 {
+                font-size: 8.4vw;
+              }
+              >h2 {
+                margin-top: 12px;
+                font-size: 6.3vw;
+              }
             }
           }
         }
       }
+    }
+    >div:last-of-type {
+      top: 50vh;
     }
   }
 
   .info {
     >div:last-of-type {
       display: none;
+    }
+  }
+
+  .german {
+    >span {
+      font-size: 4vw !important;
+    }
+    >div {
+      >h2 {
+        font-size: 5.85vw !important;
+      }
     }
   }
 }

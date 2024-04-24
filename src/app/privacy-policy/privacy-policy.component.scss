@@ -3,15 +3,26 @@
 :host {
   width: 100%;
   @include flexBox();
+  >div{
+    border: 2px dashed red;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    overflow-x: clip;
+    @include flexBox();
+    >img {
+      border: 2px dashed blue;
+      margin-right: -1400px;
+    }
+  }
 }
 
 section {
   @include contentWidth();
   @include flexBox($fd: column);
   margin: 160px 0px;
-  background-image: url(./../../assets/img/7_privacy_policy/shadow_privacy_policy.png);
-  background-repeat: no-repeat;
-  background-position: right top;
+  position: relative;
+  z-index: 2;
   >div:first-of-type {
     width: 100%;
     @include flexBox($fd: column);
@@ -100,9 +111,16 @@ section {
 }
 
 @media(max-width: 1000px) {
+  :host {
+    >div {
+      >img {
+        margin-right: -800px;
+      }
+    }
+  }
+
   section {
     margin: 120px 0px;
-    background-position: right -100px top;
     >div:first-of-type {
       >div {
         >div:first-of-type {
@@ -125,8 +143,15 @@ section {
 }
 
 @media(max-width: 500px) {
+  :host {
+    >div {
+      >img {
+        margin-right: -600px;
+      }
+    }
+  }
+
   section {
-    background-position: right -200px top;
     >div:first-of-type {
       >div {
         >div:first-of-type {

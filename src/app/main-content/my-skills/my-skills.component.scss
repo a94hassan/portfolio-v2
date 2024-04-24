@@ -1,21 +1,25 @@
 @import './../../../styles.scss';
 
 :host {
+  border: 2px dashed blue;
   width: 100%;
   max-width: 100vw;
   padding-top: 100px;
   padding-bottom: 200px;
   @include flexBox();
   >div:first-of-type {
+    border: 2px dashed red;
     @include contentWidth();
     position: absolute;
     >img {
       margin-bottom: -720px;
+      margin-left: -600px;
     }
   }
 }
 
 section {
+  border: 2px dashed green;
   scroll-margin-top: 320px;
   position: relative;
   z-index: 1;
@@ -28,6 +32,7 @@ section {
     }
   }
   >div:first-of-type {
+    border: 2px dashed yellow;
     width: 60%;
     padding-left: 100px;
     @include flexBox($jc: unset, $gap: 32px);
@@ -43,6 +48,7 @@ section {
     }
   }
   >div:last-of-type {
+    border: 2px dashed turquoise;
     width: 40%;
     @include flexBox($fd: column, $ai: flex-end, $gap: 20px);
     >div:first-of-type {
@@ -75,6 +81,10 @@ section {
       }
     }
   }
+}
+
+.german {
+  font-size: 76px !important;
 }
 
 @-webkit-keyframes hvr-bob {
@@ -165,6 +175,10 @@ section {
       }
     }
   }
+
+  .german {
+    font-size: clamp(40px, 5vw, 76px) !important;
+  }
 }
 
 @media(max-width: 1400px) {
@@ -195,6 +209,10 @@ section {
       }
     }
   }
+
+  .german {
+    font-size: clamp(40px, 4.75vw, 76px) !important;
+  }
 }
 
 @media(max-width: 1100px) {
@@ -211,7 +229,7 @@ section {
   :host {
     >div:first-of-type {
       >img {
-        margin-left: -80px;
+        margin-left: -640px;
       }
     }
   }
@@ -234,6 +252,10 @@ section {
         padding-right: $paddingLR1000;
       }
     }
+  }
+
+  .german {
+    font-size: 5.5vw !important;
   }
 }
 
@@ -258,6 +280,10 @@ section {
         padding-left: unset;
       }
     }
+  }
+
+  .german {
+    font-size: 5.2vw !important;
   }
 }
 
@@ -288,13 +314,17 @@ section {
       }
     }
   }
+
+  .german {
+    font-size: 50px !important;
+  }
 }
 
 @media(max-width: 500px) {
   :host {
     >div:first-of-type {
       >img {
-        margin-left: -160px;
+        margin-left: -720px;
       }
     }
   }
@@ -324,6 +354,10 @@ section {
         padding-right: $paddingLR500;
       }
     }
+  }
+
+  .german {
+    font-size: clamp(40px, 10vw, 60px) !important;
   }
 }
 

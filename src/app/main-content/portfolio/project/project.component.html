@@ -5,10 +5,10 @@
       <div>
         <h4>{{project.name}}</h4>
         <span>{{project.techStack}}</span>
-        <p>{{project.description}}</p>
+        <p>{{project.description | translate}}</p>
       </div>
       <div>
-        <a href="{{project.link}}" target=_blank><button>Live test</button></a>
+        <a href="{{project.link}}" target=_blank><button>{{'project_button1' | translate}}</button></a>
         <a href="{{project.github}}" target=_blank><button>Github</button></a>
       </div>
     </div>

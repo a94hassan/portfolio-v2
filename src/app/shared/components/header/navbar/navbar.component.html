@@ -1,7 +1,23 @@
 <nav>
-  <a href="#about_me_section">About me</a>
-  <a href="#my_skills_section">Skills</a>
+  <a href="#about_me_section">{{'nav_about_me' | translate}}</a>
+  <a href="#my_skills_section">{{'nav_skills' | translate}}</a>
   <a href="#portfolio_section">Portfolio</a>
+  <div class="language_selector" (click)="toggleDropdown()">
+    <div [ngClass]="{'active': showDropdown}">
+      <img src="./../../../../../assets/img/0_header/language_icon.png">
+      <span>{{ selectedOption.text }}</span>
+    </div>
+    @if (showDropdown) {
+      <ul>
+        @for (option of options; track $index) {
+          <li (click)="selectOption($index); translate.switchLanguage(option.text.toLowerCase())" [ngClass]="{'selected': selectedIndex === $index}">
+            <img [src]="option.image">
+            <span>{{ option.text }}</span>
+          </li>
+        }
+      </ul>
+    }
+  </div>
   <div class="burger_menu" #navIcon (click)="toggleIcon(navIcon, dialog)">
     <span></span>
     <span></span>

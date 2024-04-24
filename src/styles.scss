@@ -37,7 +37,8 @@ $transition: all 125ms ease-in-out;
   &:hover {
     cursor: pointer;
     background-color: if($transparent, $secondColor, $hBgColor);  
-    @if $hPadding {padding: 16px 32px; margin: 0px;}
+    @if $hPadding and not $mobile {padding: 16px 32px; margin: 0px;}
+    @if $hPadding and $mobile {padding: 12px 24px; margin: 0px;}
   }
 }
 
@@ -64,13 +65,6 @@ $transition: all 125ms ease-in-out;
 
 html {
   background-color: $bgColor;
-  overflow-x: hidden;
-}
-
-@media (max-width: 720px) {
-  @mixin button() { 
-    padding: 2px 2px;
-  }
 }
 
 

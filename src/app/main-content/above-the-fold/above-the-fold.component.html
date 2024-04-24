@@ -1,16 +1,19 @@
+<div><img src="./../../../assets/img/1_above_the_fold_section/shadow_atf.png" alt="shadow"></div>
 <section id="above_the_fold_section">
-  <div>
-    <img src="./../../../assets/img/1_above_the_fold_section/photo_atf.png" alt="photo" data-aos="fade-in">
-    <div data-aos="fade-left" data-aos-delay="1000" data-aos-duration="1000">
-      <div>
-        <span>I am</span>
-        <div>
-          <h1>Hassan Ammar</h1>
-          <h2>FRONTEND DEVELOPER</h2>
+  <div>  
+    <div>
+      <img src="./../../../assets/img/1_above_the_fold_section/photo_atf.png" alt="photo" data-aos="fade-in">
+      <div data-aos="fade-left" data-aos-delay="1000" data-aos-duration="1000">
+        <div [ngClass]="{'german': isGerman}">
+          <span>{{'atf_span1' | translate}}</span>
+          <div>
+            <h1>Hassan Ammar</h1>
+            <h2>{{'atf_h2' | translate}}</h2>
+          </div>
         </div>
-      </div>
-      <div data-aos="zoom-in" data-aos-delay="3000" data-aos-duration="200">
-            <a href="#contact_section"><button>Let’s talk!</button></a>
+        <div data-aos="zoom-in" data-aos-delay="3000" data-aos-duration="200">
+              <a href="#contact_section"><button>{{'atf_button' | translate}}</button></a>
+        </div>
       </div>
     </div>
     <div class="info">
@@ -22,7 +25,7 @@
         <a href="mailto:contact@hassan-ammar.com" data-aos="zoom-in" data-aos-delay="2000" data-aos-duration="200" data-aos-anchor-placement="bottom-bottom"><span>contact&#64;hassan-ammar.com</span></a>
       </div>
       <div data-aos="fade-down" data-aos-delay="3000" data-aos-duration="3000">
-        <span>Scroll down</span>
+        <span>{{'atf_span2' | translate}}</span>
         <img src="./../../../assets/img/1_above_the_fold_section/arrow_down_atf.png" alt="arrow down icon">
       </div>
     </div>

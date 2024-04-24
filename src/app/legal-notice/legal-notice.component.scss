@@ -3,15 +3,27 @@
 :host {
   width: 100%;
   @include flexBox();
+  >div {
+    border: 2px dashed red;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    overflow-x: clip;
+    @include flexBox();
+    >img {
+      border: 2px dashed blue;
+      margin-left: -1400px;
+      margin-bottom: -1200px
+    }
+  }
 }
 
 section {
   @include contentWidth();
   @include flexBox($fd: column);
   margin: 160px 0px;
-  background-image: url(./../../assets/img/8_legal_notice/shadow_legal_notice.png);
-  background-repeat: no-repeat;
-  background-position: right bottom;
+  position: relative;
+  z-index: 2;
   >div:first-of-type {
     width: 100%;
     @include flexBox($fd: column);
@@ -101,9 +113,16 @@ section {
 }
 
 @media(max-width: 1000px) {
+  :host {
+    >div {
+      >img {
+        margin-left: -800px;
+      }
+    }
+  }
+
   section {
     margin: 120px 0px;
-    background-position: right -100px bottom;
     >div:first-of-type {
       >div {
         >div:first-of-type {
@@ -126,8 +145,16 @@ section {
 }
 
 @media(max-width: 500px) {
+  :host {
+    >div {
+      >img {
+        margin-left: -600px;
+        margin-bottom: -1600px;
+      }
+    }
+  }
+
   section {
-    background-position: right -200px bottom;
     >div:first-of-type {
       >div {
         >div:first-of-type {

@@ -1,48 +1,49 @@
+<div><img src="./../../../assets/img/5_contact_section/shadow.png" alt="shadow"></div>
 <section id="contact_section">
   <div>
     <div data-aos="fade-in" data-aos-anchor-placement="top-center" data-aos-delay="1000" data-aos-anchor="#contact_section"></div>
-    <h1 data-aos="fade-right" data-aos-anchor-placement="top-center" data-aos-anchor="#contact_section">Contact</h1>
+    <h1 data-aos="fade-right" data-aos-anchor-placement="top-center" data-aos-anchor="#contact_section">{{'contact_h1' | translate}}</h1>
   </div>
   <div>
     <div data-aos="fade-in" data-aos-anchor-placement="top-center" data-aos-delay="2000" data-aos-anchor="#contact_section">
       <div>
-        <h4>Got a problem to solve?</h4>
-        <p>Contact me through this form, I am interested in hearing from you, knowing your ideas and contributing to your projects with my work.</p>
-        <span>Need a Frontend developer? <b>Contact me!</b></span>
+        <h4>{{'contact_h4' | translate}}</h4>
+        <p>{{'contact_p' | translate}}</p>
+        <span>{{'contact_span' | translate}}<b>{{'contact_span_bold' | translate}}</b></span>
       </div>
     </div>
     <div data-aos="fade-left" data-aos-anchor-placement="top-center" data-aos-delay="1000" data-aos-anchor="#contact_section">
       <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
         <div>
           <div>
-            <input [(ngModel)]="contactData.name" [ngClass]="{'invalid': name.invalid && name.touched || name.invalid && contactForm.submitted, 'valid': name.valid && name.touched}" name="name" type="text" placeholder="Your name" #name="ngModel" required>
+            <input [(ngModel)]="contactData.name" [ngClass]="{'invalid': name.invalid && name.touched || name.invalid && contactForm.submitted, 'valid': name.valid && name.touched}" name="name" type="text" placeholder="{{'placeholder1' | translate}}" #name="ngModel" required>
             @if (name.invalid && name.touched || name.invalid && contactForm.submitted) {
-              <span>Your name is required</span>
+              <span>{{'user_feedback1' | translate}}</span>
             }
           </div>
           <div>
-            <input [(ngModel)]="contactData.email" [ngClass]="{'invalid': email.invalid && email.touched || email.invalid && contactForm.submitted, 'valid': email.valid && email.touched}" name="email" type="email" placeholder="Your email" #email="ngModel" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" required>
+            <input [(ngModel)]="contactData.email" [ngClass]="{'invalid': email.invalid && email.touched || email.invalid && contactForm.submitted, 'valid': email.valid && email.touched}" name="email" type="email" placeholder="{{'placeholder2' | translate}}" #email="ngModel" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required>
             @if (email.invalid && email.touched || email.invalid && contactForm.submitted) {
-              <span>Your email is required</span>
+              <span>{{'user_feedback2' | translate}}</span>
             } 
           </div>
           <div>
-            <textarea [(ngModel)]="contactData.message" [ngClass]="{'invalid': message.invalid && message.touched || message.invalid && contactForm.submitted, 'valid': message.valid && message.touched}" name="message" placeholder="Your message" #message="ngModel" required></textarea>
+            <textarea [(ngModel)]="contactData.message" [ngClass]="{'invalid': message.invalid && message.touched || message.invalid && contactForm.submitted, 'valid': message.valid && message.touched}" name="message" placeholder="{{'placeholder3' | translate}}" #message="ngModel" required></textarea>
             @if (message.invalid && message.touched || message.invalid && contactForm.submitted) {
-              <span>Your message is empty</span>
+              <span>{{'user_feedback3' | translate}}</span>
             }            
           </div>
         </div>
         <div>
           <div>
             <input type="checkbox" [ngModel] name="checkbox" #checkbox="ngModel" required>
-            <span>I've read the <a href="privacy_policy">privacy policy</a> and agree to the processing of my data as outlined.</span> 
+            <span>{{'checkbox1' | translate}}<a href="privacy_policy">{{'contact_privacy_policy' | translate}}</a>{{'checkbox2' | translate}}</span> 
           </div>
           @if (checkbox.invalid && contactForm.submitted) {
-            <span>Please accept the privacy policy.</span>
+            <span>{{'user_feedback4' | translate}}</span>
           }     
         </div>
-        <button [disabled]="!checkbox" [ngClass]="{'disabled': name.invalid || email.invalid || message.invalid || checkbox.invalid}">Send message 🙂</button>
+        <button [disabled]="!checkbox" [ngClass]="{'disabled': name.invalid || email.invalid || message.invalid || checkbox.invalid}">{{'contact_button' | translate}}</button>
       </form>    
       <div>
         <a href="#above_the_fold_section"><button></button></a>
@@ -51,5 +52,5 @@
   </div>
 </section>
 <div id="feedback">
-  <span>Thank you for your email! ❤️</span>
+  <span>{{'user_feedback5' | translate}}</span>
 </div>
