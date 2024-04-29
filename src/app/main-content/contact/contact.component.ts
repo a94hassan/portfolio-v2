@@ -1,11 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { TranslationService } from './../../shared/services/translation.service';
 import { TranslateModule } from '@ngx-translate/core';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 
 @Component({
   selector: 'app-contact',
@@ -14,7 +12,7 @@ import 'aos/dist/aos.css';
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
-export class ContactComponent implements OnInit {
+export class ContactComponent {
 
   translate = inject(TranslationService);
   http = inject(HttpClient);
@@ -25,14 +23,6 @@ export class ContactComponent implements OnInit {
     name: '',
     email: '',
     message: ''
-  }
-
-  ngOnInit() {
-    AOS.init({
-      duration: 1000,
-      easing: 'ease-in-out'
-    });
-    AOS.refresh();
   }
 
   post = {
