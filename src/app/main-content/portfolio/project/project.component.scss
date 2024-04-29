@@ -1,20 +1,16 @@
 @import './../../../../styles.scss';
 
 :host {
-  border: 2px dashed purple;
   width: 100%;
   padding: 100px $paddingLR;
   >div {
-    border: 2px dashed orange;
     @include flexBox($gap: 120px, $jc: flex-end);
     margin-bottom: 120px;
     transition-timing-function: cubic-bezier(.175,.885,.32,1.275);
     >img {
-      border: 2px dashed yellowgreen;
       width: 600px;
     }
     >div {
-      border: 2px dashed orangered;
       width: 520px;
       >div:first-of-type {
         >h4 {

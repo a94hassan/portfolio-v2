@@ -1,7 +1,6 @@
 @import './../../../styles.scss';
 
 :host {
-  border: 2px dashed blue;
   height: 100vh;
   height: 100svh;
   width: 100%;
@@ -18,7 +17,6 @@
 }
 
 section {
-  border: 2px dashed green;
   position: static;
   z-index: 1;
   height: 100vh;
@@ -27,22 +25,18 @@ section {
   @include contentWidth();
   @include flexBox($fd: column);
   >div:first-of-type {
-    border: 2px dashed pink;
     width: 100%;
     padding: 0 $paddingLR;
     @include flexBox($fd: column);
     overflow-x: visible;
     >div:first-of-type {
-      border: 2px dashed purple;
       width: 100%;
       @include flexBox($jc: space-between);
       >img {
-        border: 2px dashed orange;
         width: 500px;
         margin-top: 64px;
       }
       >div:first-of-type {
-        border: 2px dashed turquoise;
         @include flexBox($fd: column, $gap: 32px, $ai: flex-end);
         transition-timing-function: cubic-bezier(.175,.885,.32,1.275);
         position: relative;
@@ -68,7 +62,6 @@ section {
           }
         }
         >div:last-of-type {
-          border: 2px dashed rosybrown;
           width: 100%;
           height: 64px;
           transition-timing-function: cubic-bezier(.175,.885,.32,1.275);
@@ -81,7 +74,6 @@ section {
     }
   }
   >div:last-of-type {
-    border: 2px dashed orangered;
     width: 100%;
     position: absolute;
     overflow-x: clip;
@@ -99,14 +91,13 @@ section {
   }
   >div {
     >h2 {
-      font-size: 55.5px !important;
+      font-size: 53.2px !important;
     }
   }
 }
 
 
 .info {
-  border: 2px dashed greenyellow;
   @include contentWidth();
   @include flexBox($jc: space-between, $ai: flex-end);
   padding-right: 100px;

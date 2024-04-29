@@ -4,14 +4,12 @@
   width: 100%;
   @include flexBox();
   >div{
-    border: 2px dashed red;
     width: 100%;
     position: absolute;
     z-index: 1;
     overflow-x: clip;
     @include flexBox();
     >img {
-      border: 2px dashed blue;
       margin-right: -1400px;
     }
   }

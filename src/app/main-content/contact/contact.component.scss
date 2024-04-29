@@ -4,26 +4,22 @@ $valid: #70E61C;
 $invalid: #E61C40;
 
 :host {
-  border: 2px dashed blue;
   width: 100%;
   @include flexBox();
   position: relative;
   overflow-x: clip;
   >div:first-of-type {
-    border: 2px dashed red;
     width: 100%;
     position: absolute;
     z-index: 1;
     overflow-x: clip;
     @include flexBox();
     >img {
-      border: 2px dashed blue;
       margin-left: -1000px;
       margin-bottom: -600px;
     }
   }
   >div:last-of-type {
-    border: 2px dashed red;
     height: 100vh;
     height: 100svh;
     width: 100%;
@@ -66,14 +62,12 @@ $invalid: #E61C40;
 }
 
 section {
-  border: 2px dashed green;
   position: relative;
   z-index: 2;
   scroll-margin-top: 120px;
   @include contentWidth();
   @include flexBox($fd: column);
   >div:first-of-type {
-    border: 2px dashed purple;
     @include flexBox($jc: flex-start);
     width: 100%;
     >div {
@@ -90,14 +84,12 @@ section {
     }
   }
   >div:last-of-type {
-    border: 2px dashed brown;
     width: 100%;
     margin-top: 64px;
     margin-bottom: 100px;
     @include flexBox($ai: unset);
     padding: 0 $paddingLR;
     >div:first-of-type {
-      border: 2px dashed yellow;
       width: 50%;
       >div {
         max-width: 480px;
@@ -113,7 +105,6 @@ section {
       }
     }
     >div:last-of-type {
-      border: 2px dashed turquoise;
       width: 50%;
       @include flexBox($fd: column, $gap: 40px);
       transition-timing-function: cubic-bezier(.175,.885,.32,1.275);

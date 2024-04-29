@@ -1,11 +1,9 @@
 @import './../../../styles.scss';
 
 :host {
-  border: 2px dashed turquoise;
   width: 100%;
   @include flexBox($fd: column);
   >div {
-    border: 2px dashed purple;
     width: 100%;
     position: relative;
     overflow-x: clip;
@@ -19,7 +17,6 @@
 }
 
 section {
-  border: 2px dashed royalblue;
   scroll-margin-top: 150px;
   position: relative;
   z-index: 3;
@@ -27,12 +24,10 @@ section {
   @include contentWidth();
   @include flexBox();
   >div:first-of-type {
-    border: 2px dashed pink;
     flex: 1;
     padding-left: 100px;
     line-height: 1.25;
     >div {
-      border: 2px dashed yellow;
       @include flexBox($fd: column, $ai: flex-start);
       width: 480px;
       >h1 {
@@ -52,7 +47,6 @@ section {
     }
   }
   >div:last-of-type {
-    border: 2px dashed brown;
     flex: 1;
     @include flexBox();
     >div:first-of-type {
