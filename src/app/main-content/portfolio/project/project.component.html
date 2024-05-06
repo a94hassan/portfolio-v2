@@ -1,5 +1,5 @@
 @for (project of projectsService.projects; track $index) {
-  <div [ngClass]="{'mirrored-style': $index % 2 !== 0}" id="project{{$index}}" data-aos="zoom-in" data-aos-anchor-placement="top-center">
+  <div [ngClass]="{'mirrored-style': $index % 2 !== 0}" id="project{{$index}}" data-aos="zoom-in" data-aos-anchor-placement="top-bottom">
     <img src="./../../../../assets/img/4_portfolio_section/{{project.img}}" alt="{{project.name}} image">
     <div>
       <div>
