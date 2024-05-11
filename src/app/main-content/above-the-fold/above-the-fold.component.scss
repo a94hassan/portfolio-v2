@@ -261,6 +261,22 @@ section {
   }
 }
 
+@media (width: 1366px) and (height: 768px) {
+  section {
+    >div:first-of-type {
+      >div:first-of-type {
+        >img {
+          width: unset;
+          height: 70vh;
+        }
+      }
+    }
+    >div:last-of-type {
+      top: 35%;
+    }
+  }
+}
+
 
 @media (max-width: 1200px) {
   section {
@@ -618,7 +634,7 @@ section {
       >div:first-of-type {
         >img {
           max-height: 50vh;
-          max-width: 100%;
+          width: unset;
         }
         >div:first-of-type {
           >div:first-of-type {

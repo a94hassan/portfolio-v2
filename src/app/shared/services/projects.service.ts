@@ -10,20 +10,20 @@ export class ProjectsService {
 
   projects: Project[] = [    
     {
-      name: 'El Pollo Loco',
-      techStack: 'JavaScript | HTML | CSS',
-      description: 'el_pollo_loco_description',
-      link: 'https://el-pollo-loco.hassan-ammar.com',
-      github: 'https://github.com/a94hassan/el_pollo_loco',
-      img: 'el_pollo_loco.png'
-    },
-    {
       name: 'Join',
       techStack: 'JavaScript | HTML | CSS',
       description: 'join_description',
       link: 'https://join.hassan-ammar.com',
       github: 'https://github.com/a94hassan/join',
       img: 'join.png'
+    },
+    {
+      name: 'El Pollo Loco',
+      techStack: 'JavaScript | HTML | CSS',
+      description: 'el_pollo_loco_description',
+      link: 'https://el-pollo-loco.hassan-ammar.com',
+      github: 'https://github.com/a94hassan/el_pollo_loco',
+      img: 'el_pollo_loco.png'
     },
     {
       name: 'Pokedex',
