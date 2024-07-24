@@ -8,18 +8,7 @@ $invalid: #E61C40;
   @include flexBox();
   position: relative;
   overflow-x: clip;
-  >div:first-of-type {
-    width: 100%;
-    position: absolute;
-    z-index: 1;
-    overflow-x: clip;
-    @include flexBox();
-    >img {
-      margin-left: -1000px;
-      margin-bottom: -600px;
-    }
-  }
-  >div:last-of-type {
+  >div {
     height: 100vh;
     height: 100svh;
     width: 100%;

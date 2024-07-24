@@ -5,15 +5,6 @@
   height: 100svh;
   width: 100%;
   @include flexBox();
-  >div {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) translateX(-380px) translateY(140px);
-    >img {
-      width: 100%;
-    }
-  }
 }
 
 section {
@@ -31,10 +22,9 @@ section {
     overflow-x: visible;
     >div:first-of-type {
       width: 100%;
-      @include flexBox($jc: space-between);
+      @include flexBox();
       >img {
         width: 520px;
-        margin-top: 128px;
       }
       >div:first-of-type {
         @include flexBox($fd: column, $gap: 32px, $ai: flex-end);
@@ -71,16 +61,6 @@ section {
           }
         }
       }
-    }
-  }
-  >div:last-of-type {
-    width: 100%;
-    position: absolute;
-    overflow-x: clip;
-    top: 28%;
-    >img {
-      width: 100%;
-      position: absolute;
     }
   }
 }

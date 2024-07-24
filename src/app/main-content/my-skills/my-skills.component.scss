@@ -6,14 +6,6 @@
   padding-top: 100px;
   padding-bottom: 200px;
   @include flexBox();
-  >div:first-of-type {
-    @include contentWidth();
-    position: absolute;
-    >img {
-      margin-bottom: -720px;
-      margin-left: -600px;
-    }
-  }
 }
 
 section {

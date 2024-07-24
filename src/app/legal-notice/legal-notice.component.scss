@@ -3,17 +3,6 @@
 :host {
   width: 100%;
   @include flexBox();
-  >div {
-    width: 100%;
-    position: absolute;
-    z-index: 1;
-    overflow-x: clip;
-    @include flexBox();
-    >img {
-      margin-left: -1400px;
-      margin-bottom: -1200px
-    }
-  }
 }
 
 section {

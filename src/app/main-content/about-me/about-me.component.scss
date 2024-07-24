@@ -3,17 +3,6 @@
 :host {
   width: 100%;
   @include flexBox($fd: column);
-  >div {
-    width: 100%;
-    position: relative;
-    overflow-x: clip;
-    >img {
-      position: absolute;
-      z-index: 2;
-      left: 50%;
-      transform: translate(60%, -30%);
-    }
-  }
 }
 
 section {
