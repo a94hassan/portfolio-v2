@@ -1,8 +1,6 @@
 <section id="above_the_fold_section">
-  <div>  
     <div>
-      <img src="./../../../assets/img/1_above_the_fold_section/photo_atf.png" alt="photo" data-aos="fade-in">
-      <div data-aos="fade-left" data-aos-delay="1000" data-aos-duration="1000" data-aos-anchor="#above_the_fold_section" data-aos-anchor-placement="top-bottom">
+      <div>
         <div [ngClass]="{'german': isGerman}">
           <span>{{'atf_span1' | translate}}</span>
           <div>
@@ -14,6 +12,7 @@
               <a href="#contact_section"><button>{{'atf_button' | translate}}</button></a>
         </div>
       </div>
+      <img src="./../../../assets/img/1_above_the_fold_section/photo_atf.png" alt="photo" data-aos="fade-in">
     </div>
     <div class="info">
       <div>
@@ -28,5 +27,4 @@
         <img src="./../../../assets/img/1_above_the_fold_section/arrow_down_atf.png" alt="arrow down icon">
       </div>
     </div>
-  </div>
 </section>
